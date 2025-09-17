@@ -2,34 +2,191 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Open JMP File</title>
+  <title>JMP/LIMS Data Extraction Tool (JET)</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      background-color: #f4f4f9;
+      margin: 0;
+      padding: 0;
+      background: #fdfdfd;
     }
-    button {
-      padding: 12px 24px;
-      font-size: 16px;
-      border: none;
-      border-radius: 8px;
-      background-color: #4CAF50;
+    header {
+      background: #007c89;
       color: white;
-      cursor: pointer;
-      transition: background-color 0.3s;
+      padding: 15px;
+      text-align: center;
     }
-    button:hover {
-      background-color: #45a049;
+    header h1 {
+      margin: 0;
+      font-size: 22px;
     }
+    .container {
+      padding: 20px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .section {
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      padding: 15px;
+      background: #fff;
+    }
+    .section h3 {
+      margin-top: 0;
+      color: #007c89;
+    }
+    .flex-row {
+      display: flex;
+      gap: 20px;
+      flex-wrap: nowrap;
+    }
+    label {
+      margin-right: 10px;
+    }
+    input[type="date"], button, select {
+      margin: 5px 0;
+      padding: 5px;
+    }
+    .scroll-box {
+      border: 1px solid #ccc;
+      height: 150px;
+      overflow-y: scroll;
+      padding: 5px;
+      font-size: 14px;
+    }
+    .small-btn {
+      margin: 3px;
+      padding: 4px 8px;
+      font-size: 12px;
+    }
+    .block {
+      flex: 1;
+      min-width: 200px;
+    }
+    .system-info {
+  padding: 10px;
+  font-size: 12px; /* più piccolo */
+  width: 320px;    /* larghezza compatta */
+}
+
   </style>
 </head>
 <body>
-  <a href="jmpfile://C:/Users/L042000/secondo_test.jmp">
-    <button>Open JMP File</button>
-  </a>
+
+<header>
+  <h1>JMP/LIMS Data Extraction Tool (JET)</h1>
+</header>
+
+<div class="container">
+
+  <!-- Prima riga con DataType, Reference, Stacked e Split -->
+  <div class="flex-row">
+     <div class="section flex-row">
+    <div class="block">
+      <h3>Data Type</h3>
+      <label><input type="radio" name="datatype"> Batch Release</label><br>
+      <label><input type="radio" name="datatype"> Stability</label>
+    </div>
+    <div class="block">
+      <h3>Reference Type</h3>
+      <label><input type="radio" name="reftype"> Manufacturing Date</label><br>
+      <label><input type="radio" name="reftype"> Study Start Date</label>
+    </div>
+    <div class="block">
+      <h3>Reference Period</h3>
+      <label>Start Date: <input type="date"></label><br>
+      <label>End Date: <input type="date"></label>
+    </div>
+    </div>
+    <div class="section flex-row">
+    <div class="block">
+      <h3>Stacked Output</h3>
+      <label><input type="radio" name="stacked"> Final values</label><br>
+      <label><input type="radio" name="stacked"> Final and Replicates</label><br>
+      <a href="jmpfile://C/Users/L042000/secondo_test.jmp">
+      <button>Create Table</button>
+      </a>
+    </div>
+    <div class="block">
+      <h3>Split Output</h3>
+      <p style="font-size: 12px;">Numeric final values only</p>
+      <button>Create Table</button>
+    </div>
+    </div>
+
+    
+    <div class="section flex-row">
+  <div class="system-info">
+    <h3 style="color: #555">GMP Regulated - Version 3.1 20Dec2024</h3>
+    <h3 style="color: #555">User: L042000</h3>
+    <h3 style="color: #555">Environment: Prod</h3>
+    <h3 style="color: #555">Source Data Updated as of 22Sept2025</h3>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+  <!-- Facility, Material, Details -->
+  <div class="section flex-row">
+    <div class="block">
+      <h3>Select Facility</h3>
+      <button class="small-btn">Select All</button>
+      <button class="small-btn">Deselect All</button>
+      <div class="scroll-box">
+        <label><input type="checkbox"> 0003 - Kinsale Bulk MFG, IE</label><br>
+        <label><input type="checkbox"> 0043 - Suzhou Pharma F/F/F, CN</label><br>
+        <label><input type="checkbox"> 0111 - Manufacturing Indy Bulk</label><br>
+        <label><input type="checkbox"> 0350 - DPEM (US)</label><br>
+        <label><input type="checkbox"> 0490 - RTP Pharma MFG, NC, US</label><br>
+      </div>
+    </div>
+    <div class="block">
+      <h3>Select Material</h3>
+      <button class="small-btn">Select All</button>
+      <button class="small-btn">Deselect All</button>
+      <div class="scroll-box">
+        <label><input type="checkbox"> QA537N - LA426 PROTEIN A</label><br>
+        <label><input type="checkbox"> QA554D - ABEMACICLIB</label>
+      </div>
+    </div>
+    <div class="block">
+      <h3>Select Material Details</h3>
+      <button class="small-btn">Select All</button>
+      <button class="small-btn">Deselect All</button>
+      <div class="scroll-box">
+        <label><input type="checkbox"> QA554D - ABEMACICLIB</label>
+      </div>
+    </div>
+  </div>
+
+  <!-- Properties and Status -->
+  <div class="section flex-row">
+    <div class="block">
+      <h3>Select Property</h3>
+      <button class="small-btn">Select All</button>
+      <button class="small-btn">Deselect All</button>
+      <div class="scroll-box">
+        <label><input type="checkbox"> Crystal Form</label><br>
+        <label><input type="checkbox"> Identity</label><br>
+        <label><input type="checkbox"> Impurities - Total</label><br>
+        <label><input type="checkbox"> Palladium (ppm)</label><br>
+        <label><input type="checkbox"> Percent Activity</label><br>
+        <label><input type="checkbox"> Residue on Ignition</label>
+      </div>
+    </div>
+    <div class="block">
+      <h3>Select Status</h3>
+      <button class="small-btn">Select All</button>
+      <button class="small-btn">Deselect All</button><br><br>
+      <label><input type="checkbox"> Sample Status Approved</label><br>
+      <label><input type="checkbox"> Test Status Approved</label><br>
+      <label><input type="checkbox"> Result Status Approved</label>
+    </div>
+  </div>
+
+</div>
+
 </body>
 </html>
