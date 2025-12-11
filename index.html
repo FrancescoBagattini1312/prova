@@ -30,13 +30,13 @@
     <div class="section flex-row">
       <div class="block">
         <h3>Data Type</h3>
-        <label><input type="radio" name="datatype"> Batch Release</label><br>
-        <label><input type="radio" name="datatype"> Stability</label>
+        <label><input type="radio" name="datatype"> Data Type 1</label><br>
+        <label><input type="radio" name="datatype"> Data Type 2</label>
       </div>
       <div class="block">
         <h3>Reference Type</h3>
-        <label><input type="radio" name="reftype"> Manufacturing Date</label><br>
-        <label><input type="radio" name="reftype"> Study Start Date</label>
+        <label><input type="radio" name="reftype"> Date 1</label><br>
+        <label><input type="radio" name="reftype"> Date 2</label>
       </div>
       <div class="block">
         <h3>Reference Period</h3>
@@ -48,8 +48,8 @@
     <div class="section flex-row">
       <div class="block">
         <h3>Stacked Output</h3>
-        <label><input type="radio" name="stacked"> Final values</label><br>
-        <label><input type="radio" name="stacked"> Final and Replicates</label><br>
+        <label><input type="radio" name="stacked"> Output Type 1</label><br>
+        <label><input type="radio" name="stacked"> Output Type 2</label><br>
         <button id="btn-stacked">Create Table</button>
       </div>
       <div class="block">
@@ -61,10 +61,10 @@
 
     <div class="section flex-row">
       <div class="system-info">
-        <h3 style="color: #555">GMP Regulated - Version 3.1 20Dec2024</h3>
-        <h3 style="color: #555">User: L042000</h3>
-        <h3 style="color: #555">Environment: Prod</h3>
-        <h3 style="color: #555">Source Data Updated as of 22Sept2025</h3>
+        <h3 style="color: #555">GMP Regulated - Version XX 20Dec2099</h3>
+        <h3 style="color: #555">User: UserCode</h3>
+        <h3 style="color: #555">Environment: Env</h3>
+        <h3 style="color: #555">Source Data Updated as of 20Dec2099</h3>
       </div>
     </div>
   </div>
@@ -75,11 +75,11 @@
       <button class="small-btn">Select All</button>
       <button class="small-btn">Deselect All</button>
       <div class="scroll-box">
-        <label><input type="checkbox"> 0003 - Kinsale Bulk MFG, IE</label><br>
-        <label><input type="checkbox"> 0043 - Suzhou Pharma F/F/F, CN</label><br>
-        <label><input type="checkbox"> 0111 - Manufacturing Indy Bulk</label><br>
-        <label><input type="checkbox"> 0350 - DPEM (US)</label><br>
-        <label><input type="checkbox"> 0490 - RTP Pharma MFG, NC, US</label><br>
+        <label><input type="checkbox"> 1234 - Facility 1</label><br>
+        <label><input type="checkbox"> 5678 - Facility 2</label><br>
+        <label><input type="checkbox"> 1357 - Facility 3</label><br>
+        <label><input type="checkbox"> 2468 - Facility 4</label><br>
+        
       </div>
     </div>
 
@@ -88,8 +88,10 @@
       <button class="small-btn">Select All</button>
       <button class="small-btn">Deselect All</button>
       <div class="scroll-box">
-        <label><input type="checkbox"> QA537N - LA426 PROTEIN A</label><br>
-        <label><input type="checkbox"> QA554D - ABEMACICLIB</label>
+        <label><input type="checkbox"> ABCD - Material 1</label><br>
+        <label><input type="checkbox"> EFGH - Material 2</label><br>
+        <label><input type="checkbox"> ILMN - Material 3</label><br>
+        <label><input type="checkbox"> OPQR - Material 4</label><br>
       </div>
     </div>
 
@@ -98,7 +100,10 @@
       <button class="small-btn">Select All</button>
       <button class="small-btn">Deselect All</button>
       <div class="scroll-box">
-        <label><input type="checkbox"> QA554D - ABEMACICLIB</label>
+        <label><input type="checkbox"> ABCD123 - Material Details 1</label><br>
+        <label><input type="checkbox"> EFGH456 - Material Details 2</label><br>
+        <label><input type="checkbox"> ILMN789 - Material Details 3</label><br>
+        <label><input type="checkbox"> OPQR012 - Material Details 4</label><br>
       </div>
     </div>
   </div>
@@ -109,12 +114,12 @@
       <button class="small-btn">Select All</button>
       <button class="small-btn">Deselect All</button>
       <div class="scroll-box">
-        <label><input type="checkbox"> Crystal Form</label><br>
-        <label><input type="checkbox"> Identity</label><br>
-        <label><input type="checkbox"> Impurities - Total</label><br>
-        <label><input type="checkbox"> Palladium (ppm)</label><br>
-        <label><input type="checkbox"> Percent Activity</label><br>
-        <label><input type="checkbox"> Residue on Ignition</label>
+        <label><input type="checkbox"> Property 1</label><br>
+        <label><input type="checkbox"> Property 2</label><br>
+        <label><input type="checkbox"> Property 3</label><br>
+        <label><input type="checkbox"> Property 4</label><br>
+        <label><input type="checkbox"> Property 5</label><br>
+        
       </div>
     </div>
 
@@ -122,22 +127,23 @@
       <h3>Select Status</h3>
       <button class="small-btn">Select All</button>
       <button class="small-btn">Deselect All</button><br><br>
-      <label><input type="checkbox"> Sample Status Approved</label><br>
-      <label><input type="checkbox"> Test Status Approved</label><br>
-      <label><input type="checkbox"> Result Status Approved</label>
+      <label><input type="checkbox"> Status 1</label><br>
+      <label><input type="checkbox"> Status 2</label><br>
+      <label><input type="checkbox"> Status 3</label><br>
+      <label><input type="checkbox"> Status 4</label><br>
     </div>
   </div>
 </div>
 
 <script>
   const dummyCSV = `Manufacturing Site,Material Number,Material Description,Batch ID,Manufacturing Date,Test Performed Date,Property Name,UOM,Storage Condition,Study Timepoint
-"Kinsale Bulk MFG, IE",QA380G,TILMICOSIN AQUEOUS N.I.,A730641,22-Mar-10,31-Mar-10,Prop A,UOM 1,5C,0 Months
-"Kinsale Bulk MFG, IE",QA380G,TILMICOSIN AQUEOUS N.I.,A730641,22-Mar-10,4-Nov-10,Prop A,UOM 2,5C,6 Months
-"Kinsale Bulk MFG, IE",QA380G,TILMICOSIN AQUEOUS N.I.,A730641,22-Mar-10,27-Oct-10,Prop A,UOM 3,5C,6 Months
-"Kinsale Bulk MFG, IE",QA380G,TILMICOSIN AQUEOUS N.I.,A730641,22-Mar-10,27-Apr-11,Prop A,UOM 4,5C,12 Months
-"Kinsale Bulk MFG, IE",QA380G,TILMICOSIN AQUEOUS N.I.,A730641,22-Mar-10,20-Apr-11,Prop A,UOM 5,5C,12 Months
-"Kinsale Bulk MFG, IE",QA380G,TILMICOSIN AQUEOUS N.I.,A730641,22-Mar-10,17-Oct-11,Prop A,UOM 6,5C,18 Months
-"Kinsale Bulk MFG, IE",QA380G,TILMICOSIN AQUEOUS N.I.,A730641,22-Mar-10,25-Oct-11,Prop A,UOM 7,5C,18 Months`;
+"1234 - Facility 1",ABCD,ABCD123 - Material Details 1,B1234,22-Mar-10,31-Mar-10,Prop A,UOM 1,SC 12,0 Months
+"1234 - Facility 1",ABCD,ABCD123 - Material Details 1,B1234,22-Mar-10,4-Nov-10,Prop A,UOM 2,SC 12,6 Months
+"1234 - Facility 1",ABCD,ABCD123 - Material Details 1,B1234,22-Mar-10,27-Oct-10,Prop A,UOM 3,SC 12,6 Months
+"1234 - Facility 1",ABCD,ABCD123 - Material Details 1,B1234,22-Mar-10,27-Apr-11,Prop A,UOM 4,SC 12,12 Months
+"1234 - Facility 1",ABCD,ABCD123 - Material Details 1,B1234,22-Mar-10,20-Apr-11,Prop A,UOM 5,SC 12,12 Months
+"1234 - Facility 1",ABCD,ABCD123 - Material Details 1,B1234,22-Mar-10,17-Oct-11,Prop A,UOM 6,SC 12,18 Months
+"1234 - Facility 1",ABCD,ABCD123 - Material Details 1,B1234,22-Mar-10,25-Oct-11,Prop A,UOM 7,SC 12,18 Months`;
 
   function downloadCSV() {
     const blob = new Blob([dummyCSV], { type: 'text/csv' });
